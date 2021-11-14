@@ -21,9 +21,9 @@
 
   &__link {
     font-weight: 700;
-    font-size: 16px;
-    line-height: 160%;
-    color: var(--color-gray);
+    font-size: 22px;
+    line-height: 1.55;
+    color: var(--color-light);
     transition: color 0.3s ease-in-out;
 
     &:focus {
@@ -32,7 +32,7 @@
     }
 
     &:hover {
-      color: var(--color-primary);
+      color: var(--color-blue);
     }
 
     &:active {
