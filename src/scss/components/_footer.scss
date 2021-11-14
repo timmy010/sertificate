@@ -1,14 +1,46 @@
 .footer {
-  &__form {
-    padding: 20px 0;
-  }
-  &__copyright {
+  &__endline {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 12px;
     padding: 20px 0;
     color: var(--color-light);
     background-color: var(--color-dark);
+  }
+  &__endline-link {
+    color: inherit;
+    margin-bottom: 10px;
+  }
+  &__contacts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-map {
+      width: 100%;
+      height: auto;
+      min-width: 50%;
+    }
+    &-info {
+      flex: 1;
+      padding: 40px 100px;
+      background-color: var(--color-dark);
+      color: var(--color-light);
+      line-height: 1.55;
+      font-size: 22px;
+      min-width: 50%;
+      height: 439px;
+    }
+    &-title {
+      font-weight: 700;
+      max-width: 90%;
+    }
+    &-descr {
+      font-style: normal;
+    }
+    &-descr a {
+      color: inherit;
+    }
   }
 }
