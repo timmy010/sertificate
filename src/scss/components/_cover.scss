@@ -1,0 +1,33 @@
+.cover {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-light);
+  font-weight: 700;
+  width: 100%;
+  height: auto;
+  background-image: url('../../img/cover.jpg');
+  background-repeat: no-repeat;
+  background-clip: cover;
+  background-position: center;
+  padding: 50px;
+  &__title {
+    font-size: 2em;
+  }
+  &__undertitle {
+    font-size: 0.5em;
+  }
+  &__subtitle {
+    font-size: 1em;
+  }
+  &__form {}
+  &__form-input-label {}
+  &__form-input {}
+  &__form-btn {}
+}
+.overlay {
+  visibility: visible;
+  opacity: 0.3;
+}
