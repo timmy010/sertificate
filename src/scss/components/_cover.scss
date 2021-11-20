@@ -13,7 +13,20 @@
   background-repeat: no-repeat;
   background-clip: cover;
   background-position: center;
-  padding: 50px;
+  padding: 20vh 0;
+  &__button {
+    color: var(--color-light);
+    font-weight: 700;
+    background-color: var(--color-blue);
+    padding: 20px 20%;
+    border-radius: 30px;
+    transition: color .3s linear, background-color .3s;
+    margin-top: 40px;
+  }
+  &__button:hover {
+    background-color: var(--color-light);
+    color: var(--color-blue);
+  }
   &__content {
     z-index: 510;
   }
@@ -27,12 +40,12 @@
   &__subtitle {
     font-size: 30px;
   }
-  &__form {
-    margin-top: 40px;
-  }
-  &__form-input-label {}
-  &__form-input {}
-  &__form-btn {}
+  // &__form {
+  //   margin-top: 40px;
+  // }
+  // &__form-input-label {}
+  // &__form-input {}
+  // &__form-btn {}
 }
 .overlay {
   position: absolute;
