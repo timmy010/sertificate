@@ -44,5 +44,11 @@
     "stylelint-declaration-block-no-ignored-properties": "^2.4.0",
     "stylelint-order": "^4.1.0",
     "stylelint-scss": "^3.20.1"
+  },
+  "dependencies": {
+    "glob-parent": "^6.0.2",
+    "nth-check": "^2.0.1",
+    "semver-regex": "^4.0.2",
+    "trim-newlines": "^4.0.2"
   }
 }
