@@ -6,6 +6,7 @@
   align-items: center;
   color: var(--color-light);
   font-weight: 700;
+  text-align: center;
   width: 100%;
   height: auto;
   background-image: url('../../img/cover.jpg');
@@ -13,21 +14,28 @@
   background-clip: cover;
   background-position: center;
   padding: 50px;
+  &__content {
+    z-index: 510;
+  }
   &__title {
-    font-size: 2em;
+    font-size: 64px;
   }
   &__undertitle {
-    font-size: 0.5em;
+    font-size: 16px;
+    letter-spacing: 2.5px;
   }
   &__subtitle {
-    font-size: 1em;
+    font-size: 30px;
   }
-  &__form {}
+  &__form {
+    margin-top: 40px;
+  }
   &__form-input-label {}
   &__form-input {}
   &__form-btn {}
 }
 .overlay {
+  position: absolute;
   visibility: visible;
-  opacity: 0.3;
+  opacity: 0.8;
 }
