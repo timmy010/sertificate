@@ -633,3 +633,33 @@ a {
     width: 90%;
   }
 }
+
+table {
+  border-collapse: collapse;
+  width: 50%;
+  font-size: 18px;
+}
+caption {
+  padding: 10px;
+  color: white;
+  background: #8FD4C1;
+  font-size: 18px;
+  text-align: left;
+  font-weight: bold;
+}
+th {
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #00000030;
+  padding: 20px;
+  text-align: left;
+}
+td {
+  border-bottom: 1px solid #00000030;
+  padding: 20px;
+}
+tr:nth-child(odd) {
+  background: #ffffff;
+}
+tr:nth-child(even) {
+  background: inherit;
+}
