@@ -663,3 +663,11 @@ tr:nth-child(odd) {
 tr:nth-child(even) {
   background: inherit;
 }
+
+.separator {
+  width: 30%;
+  box-sizing: content-box;
+  height: 1px;
+  border: 0;
+  background-color: #0857c3;
+}
