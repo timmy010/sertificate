@@ -55,6 +55,10 @@
 .ben-right {
   margin-left: 70px;
 }
+.ben-right::after {
+  right: 107%;
+  background-position: center left;
+}
 
 .ben1 {
   grid-area: ben1;
@@ -63,6 +67,21 @@
 
 .ben1::after {
   background-image: url('../../img/ben1.svg');
+}
+.ben2::after {
+  background-image: url('../../img/ben2.svg');
+}
+.ben3::after {
+  background-image: url('../../img/ben3.svg');
+}
+.ben4::after {
+  background-image: url('../../img/ben4.svg');
+}
+.ben5::after {
+  background-image: url('../../img/ben5.svg');
+}
+.ben6::after {
+  background-image: url('../../img/ben6.svg');
 }
 
 .ben2 {
