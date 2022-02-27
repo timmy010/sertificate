@@ -1,10 +1,20 @@
 .benefits {
-  margin-bottom: 40px;
+  padding: 40px;
   &__title {
     margin-bottom: 100px;
   }
   &__item {
     max-width: 60%;
+    position: relative;
+  }
+  &__item::after {
+    position: absolute;
+    top: 9%;
+    display: inline-block;
+    content: '';
+    width: 60px;
+    height: 60px;
+    background-repeat: no-repeat;
   }
   img {
     display: block;
@@ -36,11 +46,23 @@
 }
 .ben-left {
   text-align: right;
+  margin-right: 70px;
+}
+.ben-left::after {
+  left: 107%;
+  background-position: center right;
+}
+.ben-right {
+  margin-left: 70px;
 }
 
 .ben1 {
   grid-area: ben1;
   justify-self: right;
+}
+
+.ben1::after {
+  background-image: url('../../img/ben1.svg');
 }
 
 .ben2 {
