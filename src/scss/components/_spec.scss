@@ -1,0 +1,82 @@
+.spec {
+  padding: 40px 0;
+  background-color: var(--color-light);
+
+  &__title {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  &__separator {
+    width: 30%;
+    margin-bottom: 40px;
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 60px;
+  }
+}
+
+.faq-accordeon {
+  &__container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 80px 0;
+  }
+  &__answer-item {
+      font-family: "TTNormsLight";
+      font-size: 1.3em;
+      line-height: 1.5;
+  }
+}
+
+.accordeon__wrapper {
+	height: 100%;
+	padding: 50px 0;
+}
+
+/*Основные стили*/
+
+.accordeon__block-item {
+	margin: 0 0 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #00000020;
+}
+.accordeon__block-title {
+  font-size: 1.5em;
+	letter-spacing: 2px;
+	position: relative;
+	cursor: pointer;
+}
+.accordeon__block-title:before,
+.accordeon__block-title:after {
+	content: '';
+	width: 16px;
+	height: 1px;
+	background-color: #000;
+	position: absolute;
+	top: 8px;
+	transition: all 0.3s easy 0s;
+}
+.accordeon__block-title:before {
+	transform: rotate(90deg);
+  transition: all 0.2s ease-in-out;
+	left: 102%;
+}
+.accordeon__block-title:after {
+	left: 102%;
+}
+.accordeon__block-title.active:before,
+.accordeon__block-title.active:after {
+	background-color: var(--color-blue);
+}
+.accordeon__block-title.active:before {
+	transform: rotate(0deg);
+}
+.accordeon__block-text {
+	display: none;
+	padding: 10px 0 0 0;
+  font-size: 1em;
+  line-height: 1.5;
+}
