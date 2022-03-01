@@ -38,9 +38,13 @@
         background-color: #0857C3;
         color: #fff;
         padding: 10px;
-        left: -13px;
+        left: -14px;
         display: flex;
         justify-content: center;
         align-items: center;
     }
+}
+
+.process__item-wrapper:last-child>.process__line>.process__number {
+    bottom: 0;
 }
