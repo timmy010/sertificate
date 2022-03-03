@@ -11,9 +11,8 @@
   height: auto;
   background-image: url('../../img/cover.jpg');
   background-repeat: no-repeat;
-  background-clip: cover;
   background-position: center;
-  background-size: 100%;
+  background-size: cover;
   padding: 20vh 0;
   &__button {
     color: var(--color-light);
@@ -41,12 +40,6 @@
   &__subtitle {
     font-size: 30px;
   }
-  // &__form {
-  //   margin-top: 40px;
-  // }
-  // &__form-input-label {}
-  // &__form-input {}
-  // &__form-btn {}
 }
 .overlay {
   position: absolute;

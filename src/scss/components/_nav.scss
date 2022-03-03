@@ -3,7 +3,7 @@
     @include flex-v-center;
 
     @include tablet {
-      display: block;
+      display: none;
       margin-bottom: 40px;
     }
   }
@@ -44,3 +44,4 @@
     }
   }
 }
+.burger { @include burger }

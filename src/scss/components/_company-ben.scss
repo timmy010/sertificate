@@ -10,9 +10,8 @@
     height: auto;
     background-image: url('../../img/comp-ben-back.jpg');
     background-repeat: no-repeat;
-    background-clip: cover;
     background-position: center;
-    background-size: 100%;
+    background-size: cover;
     padding: 20vh 0;
     &__content {
         z-index: 510;

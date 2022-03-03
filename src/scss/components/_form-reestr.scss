@@ -5,9 +5,8 @@
         position: relative;
         background-image: url('../../img/reestr-sert-back.jpg');
         background-repeat: no-repeat;
-        background-clip: cover;
         background-position: center;
-        background-size: 100%;
+        background-size: cover;
         padding: 15vh 0;
       }
       &-content {
@@ -47,7 +46,7 @@
         width: 60px;
         height: 160px;
         left: 34%;
-        bottom: 7%;
+        bottom: 14%;
     }
   }
   .overlay {

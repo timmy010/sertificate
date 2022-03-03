@@ -28,7 +28,7 @@
       background-color: var(--color-dark);
       color: var(--color-light);
       line-height: 1.55;
-      font-size: 22px;
+      font-size: 1.2em;
       min-width: 50%;
       height: 439px;
     }
@@ -49,9 +49,8 @@
       position: relative;
       background-image: url('../../img/footer-form-back.png');
       background-repeat: no-repeat;
-      background-clip: cover;
       background-position: center;
-      background-size: 100%;
+      background-size: cover;
       padding: 15vh 0;
     }
     &-content {
