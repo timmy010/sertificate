@@ -1,4 +1,5 @@
-$(document).ready(function() {
+import $ from 'jquery';
+export const accordion = (function() {
   $('.accordeon__block-title').click(function(event) {
     if ($('.accordeon__block').hasClass('one')) {
       $('.accordeon__block-title').not($(this)).removeClass('active');
@@ -6,4 +7,4 @@ $(document).ready(function() {
     }
     $(this).toggleClass('active').next().slideToggle(300);
   });
-});
+}());

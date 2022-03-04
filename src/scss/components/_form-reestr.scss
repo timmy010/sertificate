@@ -1,7 +1,10 @@
 .form-reestr {
     &__form {
       &-wrapper {
-        @include flex-column-center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         position: relative;
         background-image: url('../../img/reestr-sert-back.jpg');
         background-repeat: no-repeat;
@@ -54,4 +57,3 @@
     visibility: visible;
     opacity: 1.8;
   }
-  
