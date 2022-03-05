@@ -1,10 +1,24 @@
 .nav {
+  @include tablet {
+    justify-content: end;
+  }
   &__list {
     @include flex-v-center;
 
     @include tablet {
-      display: none;
+      display: block;
       margin-bottom: 40px;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 500;
+      overflow-y: auto;
+      width: 100%;
+      height: 100vh;
+      background-color: var(--dark-color);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
     }
   }
 
@@ -45,3 +59,8 @@
   }
 }
 .burger { @include burger }
+
+.menu--active {
+  opacity: 1;
+  visibility: visible;
+}
