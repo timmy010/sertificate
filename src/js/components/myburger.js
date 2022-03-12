@@ -1,9 +1,6 @@
+console.log('start burger');
 const burger = document.querySelector('.burger');
-const menu = document.querySelector('.header__nav');
-const overlay = document.querySelector('.overlay');
-
-console.log(burger);
-console.log(menu);
+const menu = document.querySelector('.nav__list');
 
 const disScroll = () => {
   let pagePosition = window.scrollY;
@@ -25,8 +22,7 @@ const enScroll = () => {
 
 burger.addEventListener('click', (e) => {
   burger.classList.toggle('burger--active');
-  menu.classList.toggle('header__nav--active');
-  overlay.classList.toggle('overlay--active');
+  menu.classList.toggle('menu--active');
 
   if (burger.classList.contains('burger--active')) {
     disScroll();
