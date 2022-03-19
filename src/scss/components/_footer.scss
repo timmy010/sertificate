@@ -31,6 +31,9 @@
       font-size: 1.2em;
       min-width: 50%;
       height: 439px;
+      @include tablet {
+        padding: 10px;
+      }
     }
     &-title {
       font-weight: 700;

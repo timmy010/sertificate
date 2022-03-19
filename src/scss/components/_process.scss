@@ -17,6 +17,9 @@
     &__item-wrapper:nth-child(even) {
         justify-content: flex-end;
     }
+    &__item-wrapper:nth-child(even)>&__item {
+      padding-left: 10px;
+    }
     &__item-text {
         line-height: 1.55;
     }
