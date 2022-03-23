@@ -1,0 +1,52 @@
+.header {
+  &__first {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    @include tablet {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  &__logo {
+    max-width: 300px;
+  }
+  &__contacts {
+    @include flex-all-sb;
+    font-weight: 700;
+    @include tablet {
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 10px;
+    }
+  }
+  &__phone-email {
+    display: flex;
+    margin-right: 10px;
+  }
+  &__phone-icon {
+    margin-right: 10px;
+  }
+  &__phone-email-info {
+    display: flex;
+    flex-direction: column;
+  }
+  &__phone-value {
+    font-size: 1.5em;
+    color: inherit;
+  }
+  &__email-value {
+    color: inherit;
+  }
+  &__location {
+    display: flex;
+    align-items: center;
+  }
+  &__nav {
+    @include flex-all-center;
+    background-color: var(--color-dark);
+    padding: 20px 1%;
+  }
+}

@@ -1,0 +1,67 @@
+.spec {
+  padding: 40px 0;
+  background-color: var(--color-light);
+
+  &__title {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  &__separator {
+    width: 30%;
+    margin-bottom: 40px;
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 60px;
+  }
+}
+
+/*Основные стили*/
+
+.accordeon__block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  @include small-tablet {
+    grid-template-columns: 1fr;
+  }
+}
+
+.accordeon__block-item {
+	margin: 0 0 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #00000020;
+}
+.accordeon__block-title {
+  padding-right: 16px;
+  font-size: 1.5em;
+	letter-spacing: 2px;
+	position: relative;
+	cursor: pointer;
+}
+.accordeon__block-text {
+	display: none;
+	padding: 10px 0 0 0;
+  font-size: 1em;
+  line-height: 1.5;
+}
+.accordeon__block-title:after {
+	content: '';
+	width: 16px;
+	height: 16px;
+  background-image: url('../../img/cross.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+	position: absolute;
+  right: 0;
+  top: 0;
+	transition: all 0.3s easy 0s;
+}
+.accordeon__block-title:after {
+  transition: all 0.2s ease-in-out;
+}
+.accordeon__block-title.active:after {
+  transform: rotate(45deg);
+}

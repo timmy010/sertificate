@@ -5,16 +5,15 @@
 @import "settings";
 
 // подключения компонентов страницы
-@import "./components/header";
-@import "./components/nav";
-@import "./components/burger";
-@import "./components/cover";
-@import "./components/benefits";
-@import "./components/expert-payment";
-@import "./components/spec";
-@import "./components/process";
-@import "./components/company-ben";
-@import "./components/reg";
-@import "./components/form-reestr";
-@import "./components/footer";
-
+@import "./components/main/header";
+@import "./components/main/nav";
+@import "./components/main/burger";
+@import "./components/main/cover";
+@import "./components/main/benefits";
+@import "./components/main/expert-payment";
+@import "./components/main/spec";
+@import "./components/main/process";
+@import "./components/main/company-ben";
+@import "./components/main/reg";
+@import "./components/main/form-reestr";
+@import "./components/main/footer";

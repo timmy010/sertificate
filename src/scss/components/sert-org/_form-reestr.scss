@@ -1,0 +1,59 @@
+.form-reestr {
+    &__form {
+      &-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-image: url('../../img/reestr-sert-back.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding: 15vh 0;
+      }
+      &-content {
+        text-align: center;
+        color: var(--color-light);
+        max-width: 50%;
+        z-index: 510;
+      }
+      &-content * {
+        padding: 0;
+        margin: 0;
+      }
+      &-title {
+        color: var(--color-light);
+        padding-bottom: 40px;
+      }
+      &-subtitle {
+        font-size: 1.5em;
+        margin-bottom: 100px;
+        line-height: 1.5;
+      }
+      &-button {
+        color: var(--color-light);
+        font-weight: 700;
+        background-color: var(--color-blue);
+        padding: 20px 20%;
+        border-radius: 30px;
+        transition: color .3s linear, background-color .3s;
+      }
+      &-button:hover {
+        background-color: var(--color-light);
+        color: var(--color-blue);
+      }
+    }
+    &__btn-icon {
+        position: absolute;
+        width: 60px;
+        height: 160px;
+        left: 34%;
+        bottom: 14%;
+    }
+  }
+  .overlay {
+    position: absolute;
+    visibility: visible;
+    opacity: 1.8;
+  }
