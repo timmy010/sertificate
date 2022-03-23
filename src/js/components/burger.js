@@ -2,8 +2,8 @@ const burger = document.querySelector('.burger');
 const menu = document.querySelector('.header__nav');
 const overlay = document.querySelector('.overlay');
 
-console.log(burger);
-console.log(menu);
+// console.log(burger);
+// console.log(menu);
 
 const disScroll = () => {
   let pagePosition = window.scrollY;

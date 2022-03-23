@@ -1,4 +1,3 @@
-console.log('start burger');
 const burger = document.querySelector('.burger');
 const menu = document.querySelector('.nav__list');
 
