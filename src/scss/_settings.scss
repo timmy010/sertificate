@@ -55,22 +55,16 @@ a {
   font-size: 3em;
   color: var(--color-dark);
 
+  @include small-tablet {
+    font-size: 2em;
+  }
+
   span {
     color: var(--color-primary);
   }
 
   &--home {
     color: var(--color-light);
-  }
-
-  @include small-tablet {
-    font-size: 60px;
-    line-height: 75px;
-  }
-
-  @include mobile {
-    font-size: 35px;
-    line-height: 45px;
   }
 }
 

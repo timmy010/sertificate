@@ -1,11 +1,18 @@
 .benefits {
   margin: 40px auto;
   &__title {
-    margin-bottom: 100px;
+    margin-bottom: 5%;
   }
   &__item {
     max-width: 60%;
     position: relative;
+    @include tablet {
+      max-width: unset;
+    }
+    @include small-tablet {
+      width: 100%;
+      padding-left: 80px;
+    }
   }
   &__item::after {
     position: absolute;
@@ -15,6 +22,14 @@
     width: 60px;
     height: 60px;
     background-repeat: no-repeat;
+    @include tablet {
+      left: -70px;
+    }
+    @include small-tablet {
+      left: 0;
+      width: 50px;
+      height: 50px;
+    }
   }
   img {
     display: block;
@@ -30,11 +45,32 @@
     "ben1 center ben4"
     "ben2 center ben5"
     "ben3 center ben6";
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "ben4 ben1"
+      "ben5 ben2"
+      "ben6 ben3";
+  }
+  @include small-tablet {
+    grid-template-columns: 100%;
+    gap: unset;
+    grid-template-areas:
+    "ben1"
+    "ben2"
+    "ben3"
+    "ben4"
+    "ben5"
+    "ben6";
+  }
 }
 
 .center {
   grid-area: center;
 	margin: 0 auto;
+  @include tablet {
+    display: none;
+  }
 }
 
 .ben__title {
@@ -47,13 +83,26 @@
 .ben-left {
   text-align: right;
   margin-right: 70px;
+  @include small-tablet {
+    text-align: unset;
+    margin-right: unset;
+  }
 }
 .ben-left::after {
   left: 107%;
   background-position: center right;
+  @include tablet {
+    left: 104%;
+  }
+  @include small-tablet {
+    left: 0;
+  }
 }
 .ben-right {
   margin-left: 70px;
+  @include small-tablet {
+    margin-left: 0;
+  }
 }
 .ben-right::after {
   right: 107%;
