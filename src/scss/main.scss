@@ -5,7 +5,7 @@
 @import "settings";
 
 // подключения компонентов страницы
-@import "./components/main/header";
+@import "./components/header";
 @import "./components/main/nav";
 @import "./components/main/burger";
 @import "./components/main/cover";
@@ -16,4 +16,4 @@
 @import "./components/main/company-ben";
 @import "./components/main/reg";
 @import "./components/main/form-reestr";
-@import "./components/main/footer";
+@import "./components/footer";
