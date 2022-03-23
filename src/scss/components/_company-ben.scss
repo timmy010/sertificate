@@ -32,12 +32,15 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 20px;
+        @include small-tablet {
+          grid-template-columns: repeat(2, 1fr);
+          grid-gap: unset;
+        }
     }
     &__item {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
         &-img {
             width: 100px;
             height: 100px;
