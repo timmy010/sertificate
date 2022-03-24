@@ -1,0 +1,23 @@
+<section class="reestr">
+  <div class="reestr__content container">
+    <h1 class="reestr__title main-title">Реестр судебных экспертов и судебно-экспертных организаций</h1>
+    <p class="reestr__subtitle">Введите ФИО эксперта или ОГРН организации</p>
+    <form class="reestr__form" method="POST" action="" id="expert-search">
+      <input class="reestr__form-input" type="text" name="fio" placeholder="Введите ФИО эксперта" id="search-text">
+      <input class="reestr__form-btn btn btn--fill" type="submit" id="expert-search-btn" value="Проверить">
+    </form>
+    @include('../loader.html')
+    <table class="reestr__table" id="info-table">
+      <thead class="reestr__thead">
+        <tr>
+          <th class="reestr__th">ФИО </th>
+          <th class="reestr__th">№ сертификата </th>
+          <th class="reestr__th">Срок действия </th>
+          <th class="reestr__th">Специальность </th>
+        </tr>
+      </thead>
+      <tbody id="buss" class="reestr__tbody">
+      </tbody>
+    </table>
+  </div>
+</section>
