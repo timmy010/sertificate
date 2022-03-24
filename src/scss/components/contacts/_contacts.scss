@@ -14,48 +14,7 @@
     margin-bottom: 10px;
   }
   &__contacts {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    @include small-tablet {
-      flex-wrap: wrap;
-    }
-    &-map {
-      width: 100%;
-      height: auto;
-      min-width: 50%;
-    }
-    &-info {
-      flex: 1;
-      padding: 40px 100px;
-      background-color: var(--color-dark);
-      color: var(--color-light);
-      line-height: 1.55;
-      font-size: 1.2em;
-      min-width: 50%;
-      height: 439px;
-      @include tablet {
-        padding: 10px;
-      }
-      @include small-tablet {
-        height: auto;
-        padding: 20px;
-      }
-    }
-    &-title {
-      font-weight: 700;
-      max-width: 90%;
-      @include small-tablet {
-        margin: 0;
-        margin-bottom: 20px;
-      }
-    }
-    &-descr {
-      font-style: normal;
-    }
-    &-descr a {
-      color: inherit;
-    }
+    display: none;
   }
   &__form {
     &-wrapper {
@@ -97,6 +56,52 @@
     &-button:hover {
       background-color: var(--color-light);
       color: var(--color-blue);
+    }
+  }
+}
+.contacts {
+  &__contacts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include small-tablet {
+      flex-wrap: wrap;
+    }
+    &-map {
+      width: 100%;
+      height: auto;
+      min-width: 50%;
+    }
+    &-info {
+      flex: 1;
+      padding: 40px 100px;
+      background-color: var(--color-dark);
+      color: var(--color-light);
+      line-height: 1.55;
+      font-size: 1.2em;
+      min-width: 50%;
+      height: 688px;
+      @include tablet {
+        padding: 10px;
+      }
+      @include small-tablet {
+        height: auto;
+        padding: 20px;
+      }
+    }
+    &-title {
+      font-weight: 700;
+      max-width: 90%;
+      @include small-tablet {
+        margin: 0;
+        margin-bottom: 20px;
+      }
+    }
+    &-descr {
+      font-style: normal;
+    }
+    &-descr a {
+      color: inherit;
     }
   }
 }
