@@ -1,4 +1,4 @@
-.footer {
+.contacts {
   &__endline {
     display: flex;
     flex-direction: column;
@@ -12,9 +12,6 @@
   &__endline-link {
     color: inherit;
     margin-bottom: 10px;
-  }
-  &__contacts {
-    display: none;
   }
   &__form {
     &-wrapper {
@@ -58,6 +55,11 @@
       color: var(--color-blue);
     }
   }
+}
+.overlay {
+  position: absolute;
+  visibility: visible;
+  opacity: 0.8;
 }
 .contacts {
   &__contacts {
@@ -104,9 +106,4 @@
       color: inherit;
     }
   }
-}
-.overlay {
-  position: absolute;
-  visibility: visible;
-  opacity: 0.8;
 }
