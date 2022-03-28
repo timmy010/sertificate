@@ -9,6 +9,7 @@ const cleanCSS = require('gulp-clean-css');
 const del = require('del');
 const browserSync = require('browser-sync').create();
 const sass = require('sass');
+const modifyCssUrls = require('gulp-modify-css-urls');
 const gulpSass = require('gulp-sass');
 const svgSprite = require('gulp-svg-sprite');
 const svgmin = require('gulp-svgmin');
@@ -105,6 +106,11 @@ const styles = () => {
       grid: true,
       overrideBrowserslist: ["last 5 versions"]
     }))
+    .pipe(gulpif(isProd, modifyCssUrls({
+      modify(url, filePath) {
+        return url.replace(/\.\.\/\.\.\/img/gi, '../img$`');
+      }
+    })))
     .pipe(gulpif(isProd, cleanCSS({
       level: 2
     })))

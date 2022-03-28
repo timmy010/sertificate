@@ -1,7 +1,7 @@
 import { disableScroll } from '../functions/disable-scroll';
 import { enableScroll } from '../functions/enable-scroll';
 
-console.log('start burger');
+// console.log('start burger');
 const burger = document.querySelector('.burger');
 const menu = document.querySelector('.nav__list');
 
