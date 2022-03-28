@@ -13,12 +13,19 @@
         width: 50%;
         text-align: center;
         padding-right: 56px;
+        @include small-tablet {
+          width: 100%;
+          padding-right: unset;
+        }
     }
     &__item-wrapper:nth-child(even) {
         justify-content: flex-end;
     }
     &__item-wrapper:nth-child(even)>&__item {
       padding-left: 10px;
+      @include small-tablet {
+        padding: 0;
+      }
     }
     &__item-text {
         line-height: 1.55;
@@ -33,6 +40,9 @@
         width: 2px;
         height: 100%;
         background-color: black;
+        @include small-tablet {
+          display: none;
+        }
     }
     &__number {
         position: absolute;

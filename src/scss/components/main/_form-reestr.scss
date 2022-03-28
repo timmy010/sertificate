@@ -10,13 +10,17 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        padding: 15vh 0;
+        padding: 40px 0;
       }
       &-content {
         text-align: center;
         color: var(--color-light);
         max-width: 50%;
         z-index: 510;
+        @include small-tablet {
+          max-width: unset;
+          width: 100%;
+        }
       }
       &-content * {
         padding: 0;
