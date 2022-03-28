@@ -4,4 +4,4 @@ import './_functions';
 import './_components';
 import mediumZoom from 'medium-zoom';
 
-mediumZoom(document.querySelectorAll('[data-zoomable]'));
+// mediumZoom(document.querySelectorAll('[data-zoomable]'));
