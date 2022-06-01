@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Контакты компании Вектор. Проводим сертификацию организаций в качестве судебно-экспертных учреждений, оказывающих услуги по производству судебных экспертиз и экспертных исследований. Работаем по всей России. Регистрация в Росстандарте № РОСС RU.И2234.04РЖК0">
+  <meta name="description" content="">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#111111">
-  <title>Контакты компании Вектор</title>
+  <title>404</title>
   <link rel="preload" href="fonts/MullerRegular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/vendor.css">
   <link rel="stylesheet" href="css/main.css">
@@ -19,8 +19,13 @@
   <div class="site-container">
     @include('partials/header.html')
     <main class="main">
-      @include('partials/contacts/contacts.html')
+      <section class="error__container container">
+        <h1 class="error__title main-title">404</h1>
+        <p class="error__subtitle">Что-то пошло не так</p>
+        <a href="/" class="error__link">Вернуться на главную страницу</a>
+      </section>
     </main>
+    @include('partials/footer.html')
   </div>
 </body>
 

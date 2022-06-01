@@ -1,0 +1,19 @@
+.error {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70vh;
+  }
+  &__title {
+    font-size: 10em;
+  }
+  &__subtitle {
+    font-size: 1.5em;
+  }
+  &__link {
+    font-size: 1.5em;
+  }
+}
