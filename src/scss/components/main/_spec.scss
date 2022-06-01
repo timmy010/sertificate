@@ -61,7 +61,8 @@
 }
 .accordeon__block-title:after {
   transition: all 0.2s ease-in-out;
+  transform: rotate(45deg);
 }
 .accordeon__block-title.active:after {
-  transform: rotate(45deg);
+  transform: rotate(90deg);
 }

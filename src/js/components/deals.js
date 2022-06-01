@@ -21,10 +21,10 @@ export const deals = (function() {
     data.forEach(dataEl => {
         table.insertAdjacentHTML('beforeend', `
         <tr class="reestr__oddrow">
-            <td class="reestr__td">${dataEl.FIO} </td>
-            <td class="reestr__td">${dataEl.SERT_NUMBER} </td>
-            <td class="reestr__td">${dataEl.DATE_START} по ${dataEl.DATE_END} </td>
-            <td class="reestr__td">${dataEl.SPEC} </td>
+            <td class="reestr__td" data-label="ФИО">${dataEl.FIO} </td>
+            <td class="reestr__td" data-label="№ сертификата">${dataEl.SERT_NUMBER} </td>
+            <td class="reestr__td" data-label="Срок действия">${dataEl.DATE_START} по ${dataEl.DATE_END} </td>
+            <td class="reestr__td" data-label="Специальность">${dataEl.SPEC} </td>
         </tr>
     `);
     });
