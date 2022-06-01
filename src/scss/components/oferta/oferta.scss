@@ -1,0 +1,42 @@
+.oferta {
+  // MAINLIST
+  &__subtitle {
+    width: auto;
+    display: inline;
+  }
+  &__list {
+    counter-reset: mainList;
+  }
+  &__item {
+    list-style: none;
+  }
+  &__item:before {
+    counter-increment: mainList;
+    content: counter(mainList) ".";
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+  }
+  // SUBLIST
+  &__sublist {
+    counter-reset: subList;
+    margin: 20px 0;
+  }
+  &__subitem {
+    list-style: none;
+    margin: 10px 0;
+    font-size: 1.2em;
+  }
+  &__subitem:before {
+    counter-increment: subList;
+    content: counter(mainList) "." counter(subList) ". ";
+  }
+  // UNORDERLIST
+  &__unorder-item {
+    margin: 10px 0;
+    font-size: inherit;
+  }
+}
