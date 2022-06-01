@@ -24,16 +24,6 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-// .page__body {
-//   margin: 0;
-//   min-width: 320px;
-//   min-height: 100%;
-//   font-size: 16px;
-//   @include tablet {
-//     font-size: 14px;
-//   }
-// }
-
 img {
   height: auto;
   max-width: 100%;
@@ -318,12 +308,12 @@ td {
   border-bottom: 1px solid #00000030;
   padding: 20px;
 }
-tr:nth-child(odd) {
-  background: #ffffff;
-}
-tr:nth-child(even) {
-  background: inherit;
-}
+// tr:nth-child(odd) {
+//   background: #ffffff;
+// }
+// tr:nth-child(even) {
+//   background: inherit;
+// }
 
 .separator {
   width: 30%;

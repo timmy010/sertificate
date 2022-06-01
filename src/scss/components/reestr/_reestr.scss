@@ -31,6 +31,10 @@
       box-sizing: border-box;
       outline: none;
       border-radius: 0;
+      @include small-tablet {
+        margin: 0;
+        margin-bottom: 20px;
+      }
     }
     &-btn {
       text-align: center;
@@ -46,8 +50,44 @@
       outline: none;
       cursor: pointer;
     }
+    @include small-tablet {
+      flex-wrap: wrap;
+    }
+  }
+  &__table-wrapper {
+    display: inline-block;
   }
   &__table {
     width: 100%;
+    & tr {
+      background: #ffffff;
+    }
+    @include tablet {
+      border: 0;
+      & thead {
+        display: none;
+      }
+      & tr {
+        margin-bottom: 10px;
+        display: block;
+        border-bottom: 2px solid #ddd;
+      }
+      & td {
+        display: block;
+        text-align: right;
+        font-size: 13px;
+        border-bottom: 1px dotted #ccc;
+        border-right: 1px solid transparent;
+      }
+      & td:last-child {
+        border-bottom: 0;
+      }
+      & td:before {
+        content: attr(data-label);
+        float: left;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+    }
   }
 }

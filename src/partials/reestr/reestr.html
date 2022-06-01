@@ -7,17 +7,31 @@
       <input class="reestr__form-btn btn btn--fill" type="submit" id="expert-search-btn" value="Проверить">
     </form>
     @include('../loader.html')
-    <table class="reestr__table" id="info-table">
-      <thead class="reestr__thead">
-        <tr>
-          <th class="reestr__th">ФИО </th>
-          <th class="reestr__th">№ сертификата </th>
-          <th class="reestr__th">Срок действия </th>
-          <th class="reestr__th">Специальность </th>
-        </tr>
-      </thead>
-      <tbody id="buss" class="reestr__tbody">
-      </tbody>
-    </table>
+    <div class="reestr__table-wrapper">
+      <table class="reestr__table" id="info-table">
+        <thead class="reestr__thead">
+          <tr>
+            <th class="reestr__th">ФИО </th>
+            <th class="reestr__th">№ сертификата </th>
+            <th class="reestr__th">Срок действия </th>
+            <th class="reestr__th">Специальность </th>
+          </tr>
+        </thead>
+        <tbody id="buss" class="reestr__tbody">
+          <tr class="reestr__oddrow">
+            <td class="reestr__td" data-label="ФИО">Меркулов Денис Иювинальевич </td>
+            <td class="reestr__td" data-label="№ сертификата">2.RU.19 </td>
+            <td class="reestr__td" data-label="Срок действия">25.11.2019 по 24.11.2022 </td>
+            <td class="reestr__td" data-label="Специальность">16.5. Исследование строительных объектов, их отдельных фрагментов, инженерных систем, оборудования и коммуникаций с целью установление объема, качества и стоимости выполненных работ, использованных материалов и изделий </td>
+          </tr>
+          <tr class="reestr__oddrow">
+            <td class="reestr__td" data-label="ФИО">Тестовый Тест Тестович </td>
+            <td class="reestr__td" data-label="№ сертификата">2.RU.19 </td>
+            <td class="reestr__td" data-label="Срок действия">25.11.2019 по 24.11.2022 </td>
+            <td class="reestr__td" data-label="Специальность">16.5. Исследование строительных объектов, их отдельных фрагментов, инженерных систем, оборудования и коммуникаций с целью установление объема, качества и стоимости выполненных работ, использованных материалов и изделий </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </section>
