@@ -1,5 +1,6 @@
 import $ from 'jquery';
 export const deals = (function() {
+  $('.error-msg').hide();
   function renderRowDate(data) {
     const table = document.getElementById('info-table');
 
@@ -42,8 +43,16 @@ export const deals = (function() {
     loader.classList.remove('loader--show');
   }
 
+  const showErrMsg = (msg) => {
+    $('.error-msg').show();
+    if (msg) {
+      $('.error-msg').text(msg);
+    }
+  }
+
   document.addEventListener('submit', (e) => {
     e.preventDefault();
+    $('.error-msg').hide();
 
     const msg   = $('#expert-search').serialize();
 
@@ -55,10 +64,14 @@ export const deals = (function() {
         success: function(data) {
             hideLoader();
             const parseData = JSON.parse(data);
+            if (parseData.length < 1) {
+              showErrMsg('Сертификат не найден');
+            }
             renderRowDate(parseData);
         },
         error:  function(xhr, str){
             console.log('Возникла ошибка: ' + xhr.responseCode);
+            showErrMsg('Ошибка на сервере' + xhr.responseCode);
         }
     });
   });

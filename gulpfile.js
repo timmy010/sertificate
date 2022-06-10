@@ -242,11 +242,11 @@ const webpImages = () => {
     .pipe(dest(paths.buildImgFolder))
 };
 
-const avifImages = () => {
-  return src([`${paths.srcImgFolder}/**/**.{jpg,jpeg,png}`])
-    .pipe(avif())
-    .pipe(dest(paths.buildImgFolder))
-};
+// const avifImages = () => {
+//   return src([`${paths.srcImgFolder}/**/**.{jpg,jpeg,png}`])
+//     .pipe(avif())
+//     .pipe(dest(paths.buildImgFolder))
+// };
 
 const htmlInclude = () => {
   return src([`${srcFolder}/*.html`])
@@ -280,7 +280,7 @@ const watchFiles = () => {
 }
 
 const cache = () => {
-  return src(`${buildFolder}/**/*.{css,js,svg,png,jpg,jpeg,webp,avif,woff2}`, {
+  return src(`${buildFolder}/**/*.{css,js,svg,png,jpg,jpeg,webp,woff2}`, {
       base: buildFolder
     })
     .pipe(rev())
@@ -330,11 +330,11 @@ const toProd = (done) => {
   done();
 };
 
-exports.default = series(clean, htmlInclude, scripts, styles, resources, images, webpImages, avifImages, svgSprites, watchFiles);
+exports.default = series(clean, htmlInclude, scripts, styles, resources, images, webpImages, svgSprites, watchFiles);
 
-exports.backend = series(clean, htmlInclude, scriptsBackend, stylesBackend, resources, images, webpImages, avifImages, svgSprites)
+exports.backend = series(clean, htmlInclude, scriptsBackend, stylesBackend, resources, images, webpImages, svgSprites)
 
-exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, images, webpImages, avifImages, svgSprites, htmlMinify);
+exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, images, webpImages, svgSprites, htmlMinify);
 
 exports.cache = series(cache, rewrite);
 

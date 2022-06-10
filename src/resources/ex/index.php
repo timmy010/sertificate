@@ -1,16 +1,10 @@
 <?php
-
 require_once (__DIR__.'/crest.php');
 
 if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest')
 	{
         if (isset($_POST["fio"]))
             {
-                if ($_POST['fio'] == '')
-                {
-                    echo 'Не заполнено поле ФИО';
-                    return;
-                }
                 $fio = $_POST['fio'];
 
                 $start = 1;
@@ -24,21 +18,52 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED
 
                 $findDeals = array();
                 $i = 1;
-                while ($i <= $deals[total]) {
-                    foreach ($deals[result] as $subArr) {
-                        if(preg_match('/'. $fio .'/ui', $subArr[TITLE])) {
-                            $findDeals[] = $subArr;
-                        } else {
+                if (preg_match('/[а-яА-ЯёЁ]/ui', $_POST['fio'])) { // Поиск по названию сделки
+                    while ($i <= $deals[total]) {
+                        foreach ($deals[result] as $subArr) {
+                            if ($subArr['STAGE_ID'] == 'C9:FINAL_INVOICE' || $subArr['STAGE_ID'] == 'C9:WON') {
+                                if(preg_match('/(\W|^)'. $fio .'(\W|$)/ui', $subArr[TITLE])) {
+                                    $findDeals[] = $subArr;
+                                }
+                            }
                         }
+                        $i = $i + 49;
+                        $start = $deals[next];
+                        $deals = CRest::call(
+                            'crm.deal.list', // Запрос списка сделок (в цикле)
+                            [
+                                    'FILTER[CATEGORY_ID]' => 9,
+                                    'start' => $start,
+                            ]);
                     }
-                    $i = $i + 49;
-                    $start = $deals[next];
-                    $deals = CRest::call(
-                        'crm.deal.list', // Запрос списка сделок (в цикле)
-                        [
-                                'FILTER[CATEGORY_ID]' => 9,
-                                'start' => $start,
-                        ]);
+                } elseif (preg_match('/^[0-9]{13}$/ui', $_POST['fio'])) { // Поиск по ОГРН
+                    while ($i <= $deals[total]) {
+                        foreach ($deals[result] as $subArr) {
+                            if ($subArr['STAGE_ID'] == 'C9:FINAL_INVOICE' || $subArr['STAGE_ID'] == 'C9:WON') {
+                                $companyId = $subArr['COMPANY_ID'];
+
+                                if ($companyId != 0) {
+                                    $reqList = CRest::call(
+                                        'crm.requisite.list', // Запрос списка реквизитов (в цикле)
+                                        [
+                                            'FILTER[CATEGORY_ID]' => $companyId,
+                                        ]);
+                                    $reqOgrn = $reqList['result'][0]['RQ_OGRN'];
+                                    if ($reqOgrn != 0) {
+                                        $findDeals[] = $subArr;
+                                    }
+                                }
+                            }
+                        }
+                        $i = $i + 49;
+                        $start = $deals[next];
+                        $deals = CRest::call(
+                            'crm.deal.list', // Запрос списка сделок (в цикле)
+                            [
+                                    'FILTER[CATEGORY_ID]' => 9,
+                                    'start' => $start,
+                            ]);
+                    }
                 }
 
                 // Получение полных данных о сделках
@@ -56,7 +81,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED
                 $specField = CRest::call(
                     'crm.deal.userfield.get',
                     [
-                            'ID' => "516",
+                            'ID' => "823",
                     ]);
 
                 $specList = $specField[result]['LIST'];
@@ -64,16 +89,17 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED
                 $dealsObjects = array();
 
                 foreach($dealsFull as $deal) {
-                    $spec = null;
+                    $spec = [];
 
                     $dateStart = date("d.m.Y",strtotime($deal[result][UF_CRM_1631183840]));
                     $dateEnd = date("d.m.Y",strtotime($deal[result][UF_CRM_1631183942]));
 
                     foreach ($specList as $specItem) {
-                        if ($specItem[ID] == $deal[result][UF_CRM_1631185088]) {
-                            $spec = $specItem[VALUE];
-                        } else {
-                            'Специальность не найдена';
+                        $dealSpecList = $deal[result][UF_CRM_1649775779];
+                        foreach ($dealSpecList as $specListItem) {
+                            if ($specListItem == $specItem[ID]) {
+                                $spec[] = $specItem[VALUE];
+                            }
                         }
                     }
 
@@ -85,6 +111,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED
                         "SPEC" => $spec,
                     ];
                 }
-                // echo json_encode($dealsObjects, JSON_UNESCAPED_UNICODE);
+
+                echo json_encode($dealsObjects, JSON_UNESCAPED_UNICODE);
             }
     }
